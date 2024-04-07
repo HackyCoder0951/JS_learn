@@ -1,4 +1,4 @@
-# <b>Variables
+# <b>01 - Variables :- 
 
 <span style="font-size:25px;color:red;"><b>1 - var variableName = value</span>
 
@@ -13,10 +13,81 @@ they appear within the code. Its block scoped.
 
 > It can be reassigned but its similar to const i.e. block scoped.
 
->If variables are not created inside a function or block 
-they are globally scoped.
+>If variables are not created inside a function or block they are globally scoped.
 
-# <b>JS - Const :-
+# <b>02 - JS - Let :- 
+
+>    1 - Block Scope
+
+            Variables declared inside a { } block cannot be accessed from outside the block:
+        
+>    2 - Global Scope
+
+            Variables declared with the var always have Global Scope.
+
+            Variables declared with the var keyword can NOT have block scope:
+
+            Variables declared with varinside a { } block can be accessed from outside the block:
+
+>    3 - Cannot be Redeclared
+
+            Variables defined with let can not be redeclared.
+
+            You can not accidentally redeclare a variable declared with let.
+
+            With let you can not do this:
+
+                let x = "John Doe";
+                let x = 0;
+
+            Variables defined with var can be redeclared.
+
+            With var you can do this:
+
+                var x = "John Doe";
+                var x = 0;
+
+>    4 - Redeclaring Variables
+
+            Redeclaring a variable using the var keyword can impose problems.
+
+            Redeclaring a variable inside a block will also redeclare the variable outside the block:
+
+            Redeclaring a variable using the let keyword can solve this problem.
+
+            Redeclaring a variable inside a block will not redeclare the variable outside the block:        
+
+>    5 - What is Good?
+
+            let and const have block scope.
+
+            let and const can not be redeclared.
+
+            let and const must be declared before use.
+
+            let and const does not bind to this.
+
+            let and const are not hoisted.
+
+>    6 - What is Not Good?
+
+            var does not have to be declared.
+
+            var is hoisted.
+
+            var binds to this.
+
+>    7 - Redeclaring
+
+            Redeclaring a JavaScript variable with var is allowed anywhere in a program:
+
+            With let, redeclaring a variable in the same block is NOT allowed:
+
+            Redeclaring a variable with let, in another block, IS allowed:
+
+            
+
+# <b>03 - JS - Const :-
 
 >    1 - Constant Objects and Arrays
             The keyword const is a little misleading.
