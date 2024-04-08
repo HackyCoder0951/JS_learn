@@ -180,7 +180,7 @@ console.log("Ternary Operator (?:) of message = (20 > 15) ? 'Yes' : 'No' = ",mes
         salary: 40000  
     }                               // Delete Operator
     console.log("\nBefore Delete Operation = ",emp);   
-    console.log(delete emp.salary); 
+    console.log("\nWhile Delete Operation = ",delete emp.salary); 
     console.log("\nAfter Delete Operation = ", emp);
 }
 
@@ -227,30 +227,31 @@ console.log("Ternary Operator (?:) of message = (20 > 15) ? 'Yes' : 'No' = ",mes
     
     // Use typeof operator to determine the data type 
     console.log("\nOutput: 'number' = ",typeof num);   // Output: "number" 
-    console.log("\nOutput: 'string' = ",typeof str);   // Output: "string" 
-    console.log("\nOutput: 'boolean' = ",typeof bool);  // Output: "boolean" 
-    console.log("\nOutput: 'undefined' = ",typeof undef); // Output: "undefined" 
-    console.log("\nOutput: 'object' = ",typeof nul);   // Output: "object" (typeof null is an oddity,// it returns "object") 
-    console.log("\nOutput: 'symbol' = ",typeof sym);   // Output: "symbol" 
-    console.log("\nOutput: 'bigint' = ",typeof bigInt);// Output: "bigint" 
+    console.log("Output: 'string' = ",typeof str);   // Output: "string" 
+    console.log("Output: 'boolean' = ",typeof bool);  // Output: "boolean" 
+    console.log("Output: 'undefined' = ",typeof undef); // Output: "undefined" 
+    console.log("Output: 'object' = ",typeof nul);   // Output: "object" (typeof null is an oddity,// it returns "object") 
+    console.log("Output: 'symbol' = ",typeof sym);   // Output: "symbol" 
+    console.log("Output: 'bigint' = ",typeof bigInt);// Output: "bigint" 
 }
 
 {
     function foo() {  // Void Operator
         return void 0; 
     } 
-    console.log("\nVoid Operator = ", foo()); 
+    console.log("\nVoid Operator return void 0; = ", foo()); 
 }
 
 {
     /*yield Operator */
     function* generator() { 
         const value = yield 1; 
-        console.log("\nyield Operator = ",value); 
+        console.log("\nyield Operator 'const value = yield 1;'= ",value); 
     } 
     
     const iter = generator(); 
     
     iter.next(); 
     iter.next('hello');
+    console.log("\n");
 }
