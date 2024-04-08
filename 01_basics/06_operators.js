@@ -179,9 +179,9 @@ console.log("Ternary Operator (?:) of message = (20 > 15) ? 'Yes' : 'No' = ",mes
         lastName: "Kumar",  
         salary: 40000  
     }                               // Delete Operator
-    console.log(emp);   
+    console.log("\nBefore Delete Operation = ",emp);   
     console.log(delete emp.salary); 
-    console.log(emp);
+    console.log("\nAfter Delete Operation = ", emp);
 }
 
 {
@@ -191,13 +191,13 @@ console.log("Ternary Operator (?:) of message = (20 > 15) ? 'Yes' : 'No' = ",mes
         const array = ['geeks', 'for', 'geeks']
     
         // Output of the indexed number 
-        console.log(0 in array);
+        console.log("\nOutput of the indexed number = ", 0 in array);
 
         // Output of the Value 
-        console.log('for' in array);
+        console.log("Output of the Value = ", 'for' in array);
     
         // output of the Array property 
-        console.log('length' in array);
+        console.log("output of the Array property = ", 'length' in array);
     }
     gfg();
 }
@@ -206,12 +206,12 @@ console.log("Ternary Operator (?:) of message = (20 > 15) ? 'Yes' : 'No' = ",mes
     var myString = new String();
     var myDate = new Date();
                                                 // instanceof Operator
-    console.log(myString instanceof Object);
-    console.log(myString instanceof Date);
-    console.log(myString instanceof String);
-    console.log(myDate instanceof Date);
-    console.log(myDate instanceof Object);
-    console.log(myDate instanceof String);
+    console.log("\ninstanceof Operator = ", myString instanceof Object);
+    console.log("instanceof Operator = ",myString instanceof Date);
+    console.log("instanceof Operator = ",myString instanceof String);
+    console.log("instanceof Operator = ",myDate instanceof Date);
+    console.log("instanceof Operator = ",myDate instanceof Object);
+    console.log("instanceof Operator = ",myDate instanceof String);
 }
 
 {
@@ -226,28 +226,27 @@ console.log("Ternary Operator (?:) of message = (20 > 15) ? 'Yes' : 'No' = ",mes
     const bigInt = 9007199254740991n; 
     
     // Use typeof operator to determine the data type 
-    console.log(typeof num);   // Output: "number" 
-    console.log(typeof str);   // Output: "string" 
-    console.log(typeof bool);  // Output: "boolean" 
-    console.log(typeof undef); // Output: "undefined" 
-    console.log(typeof nul);   // Output: "object" (typeof null is an oddity, 
-                            // it returns "object") 
-    console.log(typeof sym);   // Output: "symbol" 
-    console.log(typeof bigInt);// Output: "bigint" 
+    console.log("\nOutput: 'number' = ",typeof num);   // Output: "number" 
+    console.log("\nOutput: 'string' = ",typeof str);   // Output: "string" 
+    console.log("\nOutput: 'boolean' = ",typeof bool);  // Output: "boolean" 
+    console.log("\nOutput: 'undefined' = ",typeof undef); // Output: "undefined" 
+    console.log("\nOutput: 'object' = ",typeof nul);   // Output: "object" (typeof null is an oddity,// it returns "object") 
+    console.log("\nOutput: 'symbol' = ",typeof sym);   // Output: "symbol" 
+    console.log("\nOutput: 'bigint' = ",typeof bigInt);// Output: "bigint" 
 }
 
 {
     function foo() {  // Void Operator
         return void 0; 
     } 
-    console.log(foo()); 
+    console.log("\nVoid Operator = ", foo()); 
 }
 
 {
     /*yield Operator */
     function* generator() { 
         const value = yield 1; 
-        console.log(value); 
+        console.log("\nyield Operator = ",value); 
     } 
     
     const iter = generator(); 
