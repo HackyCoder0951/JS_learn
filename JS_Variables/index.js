@@ -3,6 +3,7 @@ var x = 10, y = 50, z = x + y;
 let a = 15.695, 
  b = 100,
  c = a * b ;
+ 
 {
     let a = 20;
     b = 23;
@@ -13,8 +14,6 @@ let a = 15.695,
 function d() {
     alert(window.value);
 }*/
-
-
 
 const $_i = "hello world";
 const _ii = "my first programm output is ";
@@ -35,3 +34,5 @@ pro_lang.push("python");
 const car = {type:"fiat",model:"500",color:"white"};
 car.color = "red";
 car.owner = "Jhon";
+
+

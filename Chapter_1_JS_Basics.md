@@ -85,7 +85,7 @@ they appear within the code. Its block scoped.
 
             Redeclaring a variable with let, in another block, IS allowed:
 
-            
+
 
 # <b>03 - JS - Const :-
 
