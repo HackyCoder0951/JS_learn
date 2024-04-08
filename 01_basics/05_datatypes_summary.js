@@ -48,3 +48,28 @@ const myFunction = function() {
 
 console.log(typeof myFunction ); 
 
+/*
+
+JavaScript primitive data types
+There are five types of primitive data types in JavaScript. They are as follows:
+
+Data Type	        Description
+String	            represents sequence of characters e.g. "hello"
+Number	            represents numeric values e.g. 100
+Boolean	            represents boolean value either false or true
+Undefined	        represents undefined value
+Null	            represents null i.e. no value at all
+
+*/ 
+
+/*
+
+JavaScript non-primitive data types
+The non-primitive data types are as follows:
+
+Data Type	    Description
+Object	        represents instance through which we can access members
+Array	        represents group of similar values
+RegExp	        represents regular expression
+
+*/
