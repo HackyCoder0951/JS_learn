@@ -1,5 +1,183 @@
-/*
+/* 
+    // Operators
 
+    Unary :-> An operator is unary if it has a single operand. 
+        #:- For example, the unary negation - reverses the sign of a number:
+            let x = 1;
+            x = -x;
+            alert( x ); // -1, unary negation was applied
+
+    Binary :- An operator is binary if it has two operands. The same minus exists in binary form as well:
+            let x = 1, y = 3;
+            alert( y - x ); // 2, binary minus subtracts values
+
+    Operand :- An operand – is what operators are applied to. 
+                For instance, in the multiplication of 5 * 2 there are two operands: the left operand is 5 
+                    and the right operand is 2. Sometimes, people call these “arguments” instead of “operands”.
+
+    //Notes:
+
+            The operand can be any expression.
+            The "right-hand side" must be an identifier.
+            The "right-hand side" can be any expression.
+            The "right-hand side" is a comma-separated list of any expression with precedence > 1 (i.e. not comma expressions).
+            The operand must be a valid assignment target (identifier or property access). Its precedence means new Foo++ is (new Foo)++ (a syntax error) and not new (Foo++) (a TypeError: (Foo++) is not a constructor).
+            The operand must be a valid assignment target (identifier or property access).
+            The operand cannot be an identifier or a private property access.
+            The left-hand side cannot have precedence 14.
+            The operands cannot be a logical OR || or logical AND && operator without grouping.
+            The "left-hand side" must be a valid assignment target (identifier or property access).
+            The associativity means the two expressions after ? are implicitly grouped.
+            The "left-hand side" is a single identifier or a parenthesized parameter list.
+            Only valid inside object literals, array literals, or argument lists.
+*/
+
+/*
+Precedence	            Associativity	    Individual operators	    Notes
+-------------------------------------------------------------------------------
+18: grouping	        n/a	                Grouping
+                                            (x)	                        [1]
+-------------------------------------------------------------------------------
+17: access and call	    left-to-right	    Member access
+                                            x.y	                        [2]
+                                        ---------------------------------------
+                                            Optional chaining
+                                            x?.y
+                        -------------------------------------------------------
+                        n/a	                Computed member access
+                                            x[y]	                    [3]
+                                        ---------------------------------------
+                                            new with argument list
+                                            new x(y)	                [4]
+                                        ---------------------------------------    
+                                            Function call
+                                            x(y)
+                                        ---------------------------------------
+                                            import(x)
+-------------------------------------------------------------------------------
+16:new	                n/a	            new without argument list
+                                        new x
+-------------------------------------------------------------------------------                                    
+15:postfix operators	n/a	            Postfix increment
+                                        x++	                            [5]
+                                        ---------------------------------------
+                                        Postfix decrement
+                                        x--
+
+14: prefix operators	n/a	Prefix increment
+++x	[6]
+Prefix decrement
+--x
+Logical NOT
+!x
+Bitwise NOT
+~x
+Unary plus
++x
+Unary negation
+-x
+typeof x
+void x
+delete x	[7]
+await x
+
+13: exponentiation	right-to-left	Exponentiation
+x ** y	[8]
+
+12: multiplicative operators	left-to-right	Multiplication
+x * y
+Division
+x / y
+Remainder
+x % y
+
+11: additive operators	left-to-right	Addition
+x + y
+Subtraction
+x - y
+
+10: bitwise shift	left-to-right	Left shift
+x << y
+Right shift
+x >> y
+Unsigned right shift
+x >>> y
+9: relational operators	left-to-right	Less than
+x < y
+Less than or equal
+x <= y
+Greater than
+x > y
+Greater than or equal
+x >= y
+x in y
+x instanceof y
+8: equality operators	left-to-right	Equality
+x == y
+Inequality
+x != y
+Strict equality
+x === y
+Strict inequality
+x !== y
+7: bitwise AND	left-to-right	Bitwise AND
+x & y
+6: bitwise XOR	left-to-right	Bitwise XOR
+x ^ y
+5: bitwise OR	left-to-right	Bitwise OR
+x | y
+4: logical AND	left-to-right	Logical AND
+x && y
+3: logical OR, nullish coalescing	left-to-right	Logical OR
+x || y
+Nullish coalescing operator
+x ?? y	[9]
+2: assignment and miscellaneous	right-to-left	Assignment
+x = y	[10]
+Addition assignment
+x += y
+Subtraction assignment
+x -= y
+Exponentiation assignment
+x **= y
+Multiplication assignment
+x *= y
+Division assignment
+x /= y
+Remainder assignment
+x %= y
+Left shift assignment
+x <<= y
+Right shift assignment
+x >>= y
+Unsigned right shift assignment
+x >>>= y
+Bitwise AND assignment
+x &= y
+Bitwise XOR assignment
+x ^= y
+Bitwise OR assignment
+x |= y
+Logical AND assignment
+x &&= y
+Logical OR assignment
+x ||= y
+Nullish coalescing assignment
+x ??= y
+right-to-left	Conditional (ternary) operator
+x ? y : z	[11]
+right-to-left	Arrow
+x => y	[12]
+n/a	yield x
+yield* x
+Spread
+...x	[13]
+1: comma	left-to-right	Comma operator
+x, y
+
+*/
+
+/*
 JavaScript Arithmetic Operators
 Arithmetic operators are used to perform arithmetic operations on the operands. 
 
@@ -12,10 +190,15 @@ Operator	Description	        Example
 /	        Division	        20/10 = 2
 %	        Modulus (Remainder)	20%10 = 0
 ++	        Increment	        var a=10; a++; Now a = 11
---	        Decrement	        var a=10; a--; Now a = 9/
-**          Exponentiation      
-// ** is the exponentiation operator and is the equivalent of Math.powe  
-// it was introduced in ECMAScript 2016 (ES7)   
+--	        Decrement	        var a=10; a--; Now a = 9
+**          Exponentiation      x = 10 ** 2
+    // ** is the exponentiation operator and is the equivalent of Math.powe  
+    // it was introduced in ECMAScript 2016 (ES7)  
+
+**=         Exponentiation assignment   var x = 10; console.log(x **= 2); Now a =  100
+
+    // x **= y is equivalent to x = x ** y, except that the expression x is only evaluated once.
+ 
 
 */ 
 // Examples of JS Arithmetic Operations:- 
@@ -36,7 +219,15 @@ console.log("Modulus or Removal of 10 % 20 = ",10 % 20); //Removal
     console.log("Decrements value by one a = 10; a--; = ",a);
 }
 {
-    let 
+    let x = 10;
+    if (x > 5) {
+        x = 10 ** 2;
+    }
+    console.log("Exponentiation value of x = 10 ** 2 is = ",x);
+}
+{
+    let x = 10;
+    console.log("Exponentiation assignment value of var x = 10; console.log(x **= 2); is = ",x);
 }
 
 /* 
@@ -176,7 +367,7 @@ console.log("Ternary Operator (?:) of message = (20 > 15) ? 'Yes' : 'No' = ",mes
 
 {
     let a=10,b=20,c=a+b;
-    console.log("Comma Operator ',' = ", c); // Comma Operator
+    console.log("Comma Operator 'let a=10,b=20,c=a+b;' = ", c); // Comma Operator
 }
 
 {
