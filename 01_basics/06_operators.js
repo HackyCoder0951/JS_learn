@@ -72,7 +72,7 @@ Precedence	            Associativity	    Individual operators	    Notes
                                             Postfix decrement
                                             x--
 -------------------------------------------------------------------------------
-14:prefix operators	n/a	                    Prefix increment
+14:prefix operators	    n/a	                Prefix increment
                                             ++x	                            [6]
                                         ---------------------------------------
                                             Prefix decrement
