@@ -71,7 +71,8 @@ trim()	            It trims the white space from the left and right side of the 
 
 // 03 - JS String 'charCodeAt(index)' Method
     // Description 
-        // The charCodeAt() method returns the Unicode of the character at a specified index (position) in a string.
+        // The charCodeAt() method of String values returns an integer between 0 and 65535 
+        // representing the UTF-16 code unit at the given index.
 
     // Syntax
         //string.charCodeAt(index)
@@ -84,16 +85,100 @@ trim()	            It trims the white space from the left and right side of the 
         }
 
 // 04 - JS String 'codePointAt(index)' Method
+    // Description
+        // The codePointAt() method of String values returns a non-negative integer 
+        // that is the Unicode code point value of the character starting at the given index. 
+        // Note that the index is still based on UTF-16 code units, not Unicode code points.
 
-// 05 - JS String 'concat()' Method
+    // Syntax
+        // string.codePointAt(index)
+
+    // Example :- 
+        {
+            let text = "HELLO WORLD";
+            let code = text.codePointAt(0);
+            console.log("JS String 'codePointAt(index)' Method = ", code);
+        }    
+
+// 05 - JS String 'concat(string)' Method
+    // Description 
+        //The concat() method joins two or more strings.
+        //The concat() method does not change the existing strings.
+        //The concat() method returns a new string.
+
+    // Syntax 
+        // string.concat(string1, string2, ...stringX)
+
+    // Example :-
+        {
+            let text1 = "sea";
+            let text2 = "food";
+            let result = text1.concat(text2);
+        }        
 
 // 06 - JS String 'constructor()' Method
+    // Description 
+        // The constructor property returns the function that created the String prototype.
+        /* For JavaScript strings the constructor returns:
+            :-) function String() { [native code] } */
 
-// 07 - JS String 'endsWith()' Method
+    // Syntax
+        // string.constructor
+
+    // Example :- 
+        {
+            let message = "hello world";
+            let text = message.constructor;
+            console.log("JS String 'string.constructor' Method = ", text);
+        }
+
+// 07 - JS String 'endsWith(searchValue, length)' Method
+    // Description
+        // The endsWith() method returns true if a string ends with a specified string.
+        // Otherwise it returns false.
+        // The endsWith() method is case sensitive.
+    
+    // Syntax
+        // string.endsWith(searchValue, length)
+
+    // Example
+        {
+            let text = "Hello World";
+            let result = text.endsWith("World");
+            console.log("JS String 'endsWith()' Method = ",result);   // Output : true
+        }
 
 // 08 - JS String 'fromCharCode()' Method
+    // Description
+        // The String.fromCharCode() method converts Unicode values to characters.
+        // The String.fromCharCode() is a static method of the String object.
+        // The syntax is always String.fromCharCode().        
+        // You cannot use myString.fromCharCode().
+
+    // Syntax
+        // string.fromCharCode(n1, n2, ..., nX)
+
+    // Example :-
+        {
+            let char = String.fromCharCode(72, 69, 76, 76, 79);
+            console.log("JS String 'String.fromCharCode(72, 69, 76, 76, 79)' Method = ",char);
+        }    
 
 // 08 - JS String 'fromCharPoint()' Method
+    // Description
+        // The includes() method returns true if a string contains a specified string.
+        // Otherwise it returns false.
+        // The includes() method is case sensitive.
+
+    // Syntax
+        // string.includes(searchvalue, start)    
+
+    // Example :- 
+        {
+            let text = "hello world, welcome to the universe.";
+            let result = text.includes("world");
+            console.log("JS String 'fromCharPoint()' Method = ",result);
+        }
 
 // 09 - JS String 'includes()' Method
 
