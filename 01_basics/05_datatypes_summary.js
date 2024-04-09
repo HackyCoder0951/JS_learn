@@ -73,3 +73,23 @@ Array	        represents group of similar values
 RegExp	        represents regular expression
 
 */
+
+let myYoutubename = "jigneshgoogle.com"
+
+let anothername = myYoutubename
+anothername = "jignesh"
+
+console.log(myYoutubename);
+console.log(anothername);
+
+let userOne = {
+    email: "jignesh@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "jignesh@ssci.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
