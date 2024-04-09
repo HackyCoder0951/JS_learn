@@ -15,30 +15,38 @@
                 For instance, in the multiplication of 5 * 2 there are two operands: the left operand is 5 
                     and the right operand is 2. Sometimes, people call these “arguments” instead of “operands”.
 
-    //Notes:
-
-            The operand can be any expression.
-            The "right-hand side" must be an identifier.
-            The "right-hand side" can be any expression.
-            The "right-hand side" is a comma-separated list of any expression with precedence > 1 (i.e. not comma expressions).
-            The operand must be a valid assignment target (identifier or property access). Its precedence means new Foo++ is (new Foo)++ (a syntax error) and not new (Foo++) (a TypeError: (Foo++) is not a constructor).
-            The operand must be a valid assignment target (identifier or property access).
-            The operand cannot be an identifier or a private property access.
-            The left-hand side cannot have precedence 14.
-            The operands cannot be a logical OR || or logical AND && operator without grouping.
-            The "left-hand side" must be a valid assignment target (identifier or property access).
-            The associativity means the two expressions after ? are implicitly grouped.
-            The "left-hand side" is a single identifier or a parenthesized parameter list.
-            Only valid inside object literals, array literals, or argument lists.
 */
 
 /*
+    The following table lists operators in order from highest precedence (18) to lowest precedence (1).
+
+    Several general notes about the table:
+
+    01 - Not all syntax included here are "operators" in the strict sense. 
+            For example, spread ... and arrow => are typically not regarded as operators. 
+            However, we still included them to show how tightly they bind compared to other operators/expressions.
+    02 - Some operators have certain operands that require expressions narrower 
+            than those produced by higher-precedence operators. 
+            For example, the right-hand side of member access . (precedence 17) must be an identifier 
+            instead of a grouped expression. The left-hand side of arrow => (precedence 2) 
+            must be an arguments list or a single identifier instead of some random expression.
+    03 - Some operators have certain operands that accept expressions wider 
+            than those produced by higher-precedence operators. 
+            For example, the bracket-enclosed expression of bracket notation [ … ] (precedence 17) 
+            can be any expression, even comma (precedence 1) joined ones. These operators act as if 
+            that operand is "automatically grouped". In this case we will omit the associativity.
+
+ */
+
+/*  // Operator Precedence Table
+/       :-> Operator precedence determines how operators are parsed concerning each other. 
+                Operators with higher precedence become the operands of operators with lower precedence.
 Precedence	            Associativity	    Individual operators	    Notes
 -------------------------------------------------------------------------------
-18: grouping	        n/a	                Grouping
+18:grouping	            n/a	                Grouping
                                             (x)	                        [1]
 -------------------------------------------------------------------------------
-17: access and call	    left-to-right	    Member access
+17:access and call	    left-to-right	    Member access
                                             x.y	                        [2]
                                         ---------------------------------------
                                             Optional chaining
@@ -63,119 +71,206 @@ Precedence	            Associativity	    Individual operators	    Notes
                                         ---------------------------------------
                                         Postfix decrement
                                         x--
+-------------------------------------------------------------------------------
+14:prefix operators	n/a	            Prefix increment
+                                        ++x	                            [6]
+                                        ---------------------------------------
+                                        Prefix decrement
+                                        --x
+                                        ---------------------------------------
+                                        Logical NOT
+                                        !x
+                                        ---------------------------------------
+                                        Bitwise NOT
+                                        ~x
+                                        ---------------------------------------
+                                        Unary plus
+                                        +x
+                                        ---------------------------------------
+                                        Unary negation
+                                        -x
+                                        ---------------------------------------
+                                        typeof x
+                                        ---------------------------------------
+                                        void x
+                                        ---------------------------------------
+                                        delete x	                    [7]
+                                        ---------------------------------------
+                                        await x
+-------------------------------------------------------------------------------
+13:exponentiation	    right-to-left	Exponentiation
+                                        x ** y	                        [8]
+-------------------------------------------------------------------------------
+12:multiplicative 	    left-to-right	Multiplication
+                                        x * y
+                                        ---------------------------------------
+                                        Division
+                                        x / y
+                                        ---------------------------------------
+                                        Remainder
+                                        x % y
+-------------------------------------------------------------------------------
+11:additive  	        left-to-right	Addition
+                                        x + y
+                                        ---------------------------------------
+                                        Subtraction
+                                        x - y
+-------------------------------------------------------------------------------
+10:bitwise shift	    left-to-right	Left shift
+                                        x << y
+                                        ---------------------------------------
+                                        Right shift
+                                        x >> y
+                                        ---------------------------------------
+                                        Unsigned right shift
+                                        x >>> y
+-------------------------------------------------------------------------------                                        
+9:relational  	        left-to-right	Less than
+                                        x < y
+                                        ---------------------------------------
+                                        Less than or equal
+                                        x <= y
+                                        ---------------------------------------
+                                        Greater than
+                                        x > y
+                                        ---------------------------------------
+                                        Greater than or equal
+                                        x >= y
+                                        ---------------------------------------
+                                        x in y
+                                        ---------------------------------------
+                                        x instanceof y
+-------------------------------------------------------------------------------                                        
+8:equality  	        left-to-right	Equality
+                                        x == y
+                                        ---------------------------------------
+                                        Inequality
+                                        x != y
+                                        ---------------------------------------
+                                        Strict equality
+                                        x === y
+                                        ---------------------------------------
+                                        Strict inequality
+                                        x !== y
+-------------------------------------------------------------------------------                                        
+7: bitwise AND	        left-to-right	Bitwise AND
+                                        x & y
+-------------------------------------------------------------------------------
+6: bitwise XOR	        left-to-right	Bitwise XOR
+                                        x ^ y
+-------------------------------------------------------------------------------
+5: bitwise OR	        left-to-right	Bitwise OR
+                                        x | y
+-------------------------------------------------------------------------------
+4: logical AND	        left-to-right	Logical AND
+                                        x && y
+-------------------------------------------------------------------------------
+3: logical OR,          left-to-right	Logical OR
+nullish coalescing	                    x || y                                        
+                                        ---------------------------------------                              
+                                        Nullish coalescing operator
+                                        x ?? y	                        [9]
+-------------------------------------------------------------------------------                                        
+2: assignment 	        right-to-left	Assignment
+and miscellaneous                       x = y	                        [10]
+                                        ---------------------------------------
+                                        Addition assignment
+                                        x += y
+                                        ---------------------------------------
+                                        Subtraction assignment
+                                        x -= y
+                                        ---------------------------------------
+                                        Exponentiation assignment
+                                        x **= y
+                                        ---------------------------------------
+                                        Multiplication assignment
+                                        x *= y
+                                        ---------------------------------------
+                                        Division assignment
+                                        x /= y
+                                        ---------------------------------------
+                                        Remainder assignment
+                                        x %= y
+                                        ---------------------------------------
+                                        Left shift assignment
+                                        x <<= y
+                                        ---------------------------------------
+                                        Right shift assignment
+                                        x >>= y
+                                        ---------------------------------------
+                                        Unsigned right shift assignment
+                                        x >>>= y
+                                        ---------------------------------------
+                                        Bitwise AND assignment
+                                        x &= y
+                                        ---------------------------------------             
+                                        Bitwise XOR assignment
+                                        x ^= y
+                                        ---------------------------------------
+                                        Bitwise OR assignment
+                                        x |= y
+                                        ---------------------------------------
+                                        Logical AND assignment
+                                        x &&= y
+                                        ---------------------------------------
+                                        Logical OR assignment
+                                        x ||= y
+                                        ---------------------------------------
+                                        Nullish coalescing assignment
+                                        x ??= y
+                        -------------------------------------------------------
+                        right-to-left	Conditional (ternary) operator
+                                    x ? y : z                           [11]
+                        -------------------------------------------------------
+                        right-to-left	Arrow
+                                    x => y	                            [12]
+                        -------------------------------------------------------
+                        n/a	            yield x
+                                        ---------------------------------------
+                                        yield* x
+                                        ---------------------------------------
+                                        Spread
+                                        ...x	                        [13]
+-------------------------------------------------------------------------------
+1: comma	            left-to-right	Comma operator
+                                        x, y
+-------------------------------------------------------------------------------                                        
 
-14: prefix operators	n/a	Prefix increment
-++x	[6]
-Prefix decrement
---x
-Logical NOT
-!x
-Bitwise NOT
-~x
-Unary plus
-+x
-Unary negation
--x
-typeof x
-void x
-delete x	[7]
-await x
+    //Notes:
 
-13: exponentiation	right-to-left	Exponentiation
-x ** y	[8]
-
-12: multiplicative operators	left-to-right	Multiplication
-x * y
-Division
-x / y
-Remainder
-x % y
-
-11: additive operators	left-to-right	Addition
-x + y
-Subtraction
-x - y
-
-10: bitwise shift	left-to-right	Left shift
-x << y
-Right shift
-x >> y
-Unsigned right shift
-x >>> y
-9: relational operators	left-to-right	Less than
-x < y
-Less than or equal
-x <= y
-Greater than
-x > y
-Greater than or equal
-x >= y
-x in y
-x instanceof y
-8: equality operators	left-to-right	Equality
-x == y
-Inequality
-x != y
-Strict equality
-x === y
-Strict inequality
-x !== y
-7: bitwise AND	left-to-right	Bitwise AND
-x & y
-6: bitwise XOR	left-to-right	Bitwise XOR
-x ^ y
-5: bitwise OR	left-to-right	Bitwise OR
-x | y
-4: logical AND	left-to-right	Logical AND
-x && y
-3: logical OR, nullish coalescing	left-to-right	Logical OR
-x || y
-Nullish coalescing operator
-x ?? y	[9]
-2: assignment and miscellaneous	right-to-left	Assignment
-x = y	[10]
-Addition assignment
-x += y
-Subtraction assignment
-x -= y
-Exponentiation assignment
-x **= y
-Multiplication assignment
-x *= y
-Division assignment
-x /= y
-Remainder assignment
-x %= y
-Left shift assignment
-x <<= y
-Right shift assignment
-x >>= y
-Unsigned right shift assignment
-x >>>= y
-Bitwise AND assignment
-x &= y
-Bitwise XOR assignment
-x ^= y
-Bitwise OR assignment
-x |= y
-Logical AND assignment
-x &&= y
-Logical OR assignment
-x ||= y
-Nullish coalescing assignment
-x ??= y
-right-to-left	Conditional (ternary) operator
-x ? y : z	[11]
-right-to-left	Arrow
-x => y	[12]
-n/a	yield x
-yield* x
-Spread
-...x	[13]
-1: comma	left-to-right	Comma operator
-x, y
-
+        01 -    The operand can be any expression.
+        02 -    The "right-hand side" must be an identifier.
+        03 -    The "right-hand side" can be any expression.
+        04 -    The "right-hand side" is a comma-separated list of any expression with precedence > 1  
+                    (i.e. not comma expressions).
+        05 -    The operand must be a valid assignment target (identifier or property access). 
+                    Its precedence means new Foo++ is (new Foo)++ (a syntax error) 
+                        and not new (Foo++) (a TypeError: (Foo++) is not a constructor).
+        06 -    The operand must be a valid assignment target (identifier or property access).
+        07 -    The operand cannot be an identifier or a private property access.
+        08 -    The left-hand side cannot have precedence 14.
+        09 -    The operands cannot be a logical OR || or logical AND && operator without grouping.
+        10 -    The "left-hand side" must be a valid assignment target (identifier or property access).
+        11 -    The associativity means the two expressions after ? are implicitly grouped.
+        12 -    The "left-hand side" is a single identifier or a parenthesized parameter list.
+        13 -    Only valid inside object literals, array literals, or argument lists.
 */
+
+// Short-circuiting
+/* Short-circuiting is jargon for conditional evaluation. 
+    For example, in the expression a && (b + c), if a is falsy, 
+        then the sub-expression (b + c) will not even get evaluated, 
+        even if it is grouped and therefore has higher precedence than &&. 
+        We could say that the logical AND operator (&&) is "short-circuited". 
+        Along with logical AND, other short-circuited operators include logical OR (||), 
+        nullish coalescing (??), and optional chaining (?.). 
+      
+        a || (b * c); // evaluate `a` first, then produce `a` if `a` is "truthy"
+        a && (b < c); // evaluate `a` first, then produce `a` if `a` is "falsy"
+        a ?? (b || c); // evaluate `a` first, then produce `a` if `a` is not `null` and not `undefined`
+        a?.b.c; // evaluate `a` first, then produce `undefined` if `a` is `null` or `undefined`    
+*/
+
 
 /*
 JavaScript Arithmetic Operators
