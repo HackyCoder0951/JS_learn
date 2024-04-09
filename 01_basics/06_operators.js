@@ -13,6 +13,9 @@ Operator	Description	        Example
 %	        Modulus (Remainder)	20%10 = 0
 ++	        Increment	        var a=10; a++; Now a = 11
 --	        Decrement	        var a=10; a--; Now a = 9/
+**          Exponentiation      
+// ** is the exponentiation operator and is the equivalent of Math.powe  
+// it was introduced in ECMAScript 2016 (ES7)   
 
 */ 
 // Examples of JS Arithmetic Operations:- 
@@ -31,7 +34,10 @@ console.log("Modulus or Removal of 10 % 20 = ",10 % 20); //Removal
     let a = 10;
      a--; //Decrements value by one, now a is 9
     console.log("Decrements value by one a = 10; a--; = ",a);
-    }
+}
+{
+    let 
+}
 
 /* 
 
