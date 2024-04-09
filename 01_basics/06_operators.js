@@ -44,196 +44,196 @@
 Precedence	            Associativity	    Individual operators	    Notes
 -------------------------------------------------------------------------------
 18:grouping	            n/a	                Grouping
-                                            (x)	                        [1]
+                                            (x)	                            [1]
 -------------------------------------------------------------------------------
 17:access and call	    left-to-right	    Member access
-                                            x.y	                        [2]
+                                            x.y	                            [2]
                                         ---------------------------------------
                                             Optional chaining
                                             x?.y
                         -------------------------------------------------------
                         n/a	                Computed member access
-                                            x[y]	                    [3]
+                                            x[y]	                        [3]
                                         ---------------------------------------
                                             new with argument list
-                                            new x(y)	                [4]
+                                            new x(y)	                    [4]
                                         ---------------------------------------    
                                             Function call
                                             x(y)
                                         ---------------------------------------
                                             import(x)
 -------------------------------------------------------------------------------
-16:new	                n/a	            new without argument list
-                                        new x
+16:new	                n/a	                new without argument list
+                                            new x
 -------------------------------------------------------------------------------                                    
-15:postfix operators	n/a	            Postfix increment
-                                        x++	                            [5]
+15:postfix operators	n/a	                Postfix increment
+                                            x++	                            [5]
                                         ---------------------------------------
-                                        Postfix decrement
-                                        x--
+                                            Postfix decrement
+                                            x--
 -------------------------------------------------------------------------------
-14:prefix operators	n/a	            Prefix increment
-                                        ++x	                            [6]
+14:prefix operators	n/a	                    Prefix increment
+                                            ++x	                            [6]
                                         ---------------------------------------
-                                        Prefix decrement
-                                        --x
+                                            Prefix decrement
+                                            --x
                                         ---------------------------------------
-                                        Logical NOT
-                                        !x
+                                            Logical NOT
+                                            !x
                                         ---------------------------------------
-                                        Bitwise NOT
-                                        ~x
+                                            Bitwise NOT
+                                            ~x
                                         ---------------------------------------
-                                        Unary plus
-                                        +x
+                                            Unary plus
+                                            +x
                                         ---------------------------------------
-                                        Unary negation
-                                        -x
+                                            Unary negation
+                                            -x
                                         ---------------------------------------
-                                        typeof x
+                                            typeof x
                                         ---------------------------------------
-                                        void x
+                                            void x
                                         ---------------------------------------
-                                        delete x	                    [7]
+                                            delete x	                    [7]
                                         ---------------------------------------
-                                        await x
+                                            await x
 -------------------------------------------------------------------------------
-13:exponentiation	    right-to-left	Exponentiation
-                                        x ** y	                        [8]
+13:exponentiation	    right-to-left	    Exponentiation
+                                            x ** y	                        [8]
 -------------------------------------------------------------------------------
-12:multiplicative 	    left-to-right	Multiplication
-                                        x * y
+12:multiplicative 	    left-to-right	    Multiplication
+                                            x * y
                                         ---------------------------------------
-                                        Division
-                                        x / y
+                                            Division
+                                            x / y
                                         ---------------------------------------
-                                        Remainder
-                                        x % y
+                                            Remainder
+                                            x % y
 -------------------------------------------------------------------------------
-11:additive  	        left-to-right	Addition
-                                        x + y
+11:additive  	        left-to-right	    Addition
+                                            x + y
                                         ---------------------------------------
-                                        Subtraction
-                                        x - y
+                                            Subtraction
+                                            x - y
 -------------------------------------------------------------------------------
-10:bitwise shift	    left-to-right	Left shift
-                                        x << y
+10:bitwise shift	    left-to-right	    Left shift
+                                            x << y
                                         ---------------------------------------
-                                        Right shift
-                                        x >> y
+                                            Right shift
+                                            x >> y
                                         ---------------------------------------
-                                        Unsigned right shift
-                                        x >>> y
+                                            Unsigned right shift
+                                            x >>> y
 -------------------------------------------------------------------------------                                        
-9:relational  	        left-to-right	Less than
-                                        x < y
+9:relational  	        left-to-right	    Less than
+                                            x < y
                                         ---------------------------------------
-                                        Less than or equal
-                                        x <= y
+                                            Less than or equal
+                                            x <= y
                                         ---------------------------------------
-                                        Greater than
-                                        x > y
+                                            Greater than
+                                            x > y
                                         ---------------------------------------
-                                        Greater than or equal
-                                        x >= y
+                                            Greater than or equal
+                                            x >= y
                                         ---------------------------------------
-                                        x in y
+                                            x in y
                                         ---------------------------------------
-                                        x instanceof y
+                                            x instanceof y
 -------------------------------------------------------------------------------                                        
-8:equality  	        left-to-right	Equality
-                                        x == y
+8:equality  	        left-to-right	    Equality
+                                            x == y
                                         ---------------------------------------
-                                        Inequality
-                                        x != y
+                                            Inequality
+                                            x != y
                                         ---------------------------------------
-                                        Strict equality
-                                        x === y
+                                            Strict equality
+                                            x === y
                                         ---------------------------------------
-                                        Strict inequality
-                                        x !== y
+                                            Strict inequality
+                                            x !== y
 -------------------------------------------------------------------------------                                        
-7: bitwise AND	        left-to-right	Bitwise AND
-                                        x & y
+7: bitwise AND	        left-to-right	    Bitwise AND
+                                            x & y
 -------------------------------------------------------------------------------
-6: bitwise XOR	        left-to-right	Bitwise XOR
-                                        x ^ y
+6: bitwise XOR	        left-to-right	    Bitwise XOR
+                                            x ^ y
 -------------------------------------------------------------------------------
-5: bitwise OR	        left-to-right	Bitwise OR
-                                        x | y
+5: bitwise OR	        left-to-right	    Bitwise OR
+                                            x | y
 -------------------------------------------------------------------------------
-4: logical AND	        left-to-right	Logical AND
-                                        x && y
+4: logical AND	        left-to-right	    Logical AND
+                                            x && y
 -------------------------------------------------------------------------------
-3: logical OR,          left-to-right	Logical OR
-nullish coalescing	                    x || y                                        
+3: logical OR,          left-to-right	    Logical OR
+nullish coalescing	                        x || y                                        
                                         ---------------------------------------                              
-                                        Nullish coalescing operator
-                                        x ?? y	                        [9]
+                                            Nullish coalescing operator
+                                            x ?? y	                        [9]
 -------------------------------------------------------------------------------                                        
-2: assignment 	        right-to-left	Assignment
-and miscellaneous                       x = y	                        [10]
+2: assignment 	        right-to-left	    Assignment
+and miscellaneous                           x = y	                        [10]
                                         ---------------------------------------
-                                        Addition assignment
-                                        x += y
+                                            Addition assignment
+                                            x += y
                                         ---------------------------------------
-                                        Subtraction assignment
-                                        x -= y
+                                            Subtraction assignment
+                                            x -= y
                                         ---------------------------------------
-                                        Exponentiation assignment
-                                        x **= y
+                                            Exponentiation assignment
+                                            x **= y
                                         ---------------------------------------
-                                        Multiplication assignment
-                                        x *= y
+                                            Multiplication assignment
+                                            x *= y
                                         ---------------------------------------
-                                        Division assignment
-                                        x /= y
+                                            Division assignment
+                                            x /= y
                                         ---------------------------------------
-                                        Remainder assignment
-                                        x %= y
+                                            Remainder assignment
+                                            x %= y
                                         ---------------------------------------
-                                        Left shift assignment
-                                        x <<= y
+                                            Left shift assignment
+                                            x <<= y
                                         ---------------------------------------
-                                        Right shift assignment
-                                        x >>= y
+                                            Right shift assignment
+                                            x >>= y
                                         ---------------------------------------
-                                        Unsigned right shift assignment
-                                        x >>>= y
+                                            Unsigned right shift assignment
+                                            x >>>= y
                                         ---------------------------------------
-                                        Bitwise AND assignment
-                                        x &= y
+                                            Bitwise AND assignment
+                                            x &= y
                                         ---------------------------------------             
-                                        Bitwise XOR assignment
-                                        x ^= y
+                                            Bitwise XOR assignment
+                                            x ^= y
                                         ---------------------------------------
-                                        Bitwise OR assignment
-                                        x |= y
+                                            Bitwise OR assignment
+                                            x |= y
                                         ---------------------------------------
-                                        Logical AND assignment
-                                        x &&= y
+                                            Logical AND assignment
+                                            x &&= y
                                         ---------------------------------------
-                                        Logical OR assignment
-                                        x ||= y
+                                            Logical OR assignment
+                                            x ||= y
                                         ---------------------------------------
-                                        Nullish coalescing assignment
-                                        x ??= y
+                                            Nullish coalescing assignment
+                                            x ??= y
                         -------------------------------------------------------
-                        right-to-left	Conditional (ternary) operator
-                                    x ? y : z                           [11]
+                        right-to-left	    Conditional (ternary) operator
+                                            x ? y : z                       [11]
                         -------------------------------------------------------
-                        right-to-left	Arrow
-                                    x => y	                            [12]
+                        right-to-left	    Arrow
+                                            x => y	                        [12]
                         -------------------------------------------------------
-                        n/a	            yield x
+                        n/a	                yield x
                                         ---------------------------------------
-                                        yield* x
+                                            yield* x
                                         ---------------------------------------
-                                        Spread
-                                        ...x	                        [13]
+                                            Spread
+                                            ...x	                        [13]
 -------------------------------------------------------------------------------
-1: comma	            left-to-right	Comma operator
-                                        x, y
+1:comma	                left-to-right	    Comma operator
+                                            x, y
 -------------------------------------------------------------------------------                                        
 
     //Notes:
