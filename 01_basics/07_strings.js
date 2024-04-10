@@ -54,7 +54,7 @@ trim()	            It trims the white space from the left and right side of the 
     // Example :- 
         {
             let text = "W3Schools", character = text.at(0);
-            console.log("JS String 'at(index)' Method = ",character);
+            console.log("01 - JS String 'at(index)' Method = ",character);
         }
 
 // 02 - JS String 'charAt(index)' Method 
@@ -69,7 +69,7 @@ trim()	            It trims the white space from the left and right side of the 
         {
             let text = "HELLO WORLD";
             let letter = text.charAt(0,1,2);
-            console.log("JS String 'charAt(index)' Method = ",letter);
+            console.log("02 - JS String 'charAt(index)' Method = ",letter);
         }   
 
 // 03 - JS String 'charCodeAt(index)' Method
@@ -84,7 +84,7 @@ trim()	            It trims the white space from the left and right side of the 
         {
             let text = "HELLO WORLD";
             let code = text.charCodeAt(0);
-            console.log("JS String 'charCodeAt(index)' Method = ",code);
+            console.log("03 - JS String 'charCodeAt(index)' Method = ",code);
         }
 
 // 04 - JS String 'codePointAt(index)' Method
@@ -100,7 +100,7 @@ trim()	            It trims the white space from the left and right side of the 
         {
             let text = "HELLO WORLD";
             let code = text.codePointAt(0);
-            console.log("JS String 'codePointAt(index)' Method = ", code);
+            console.log("04 - JS String 'codePointAt(index)' Method = ", code);
         }    
 
 // 05 - JS String 'concat(string)' Method
@@ -117,6 +117,7 @@ trim()	            It trims the white space from the left and right side of the 
             let text1 = "sea";
             let text2 = "food";
             let result = text1.concat(text2);
+            console.log("05 - JS String 'text1.concat(text2);' Method = ", result);
         }        
 
 // 06 - JS String 'constructor()' Method
@@ -132,7 +133,7 @@ trim()	            It trims the white space from the left and right side of the 
         {
             let message = "hello world";
             let text = message.constructor;
-            console.log("JS String 'string.constructor' Method = ", text);
+            console.log("06 - JS String 'string.constructor' Method = ", text);
         }
 
 // 07 - JS String 'endsWith(searchValue, length)' Method
@@ -148,7 +149,7 @@ trim()	            It trims the white space from the left and right side of the 
         {
             let text = "Hello World";
             let result = text.endsWith("World");
-            console.log("JS String 'endsWith()' Method = ",result);   // Output : true
+            console.log("07 - JS String 'endsWith()' Method = ",result);   // Output : true
         }
 
 // 08 - JS String 'fromCharCode()' Method
@@ -164,7 +165,7 @@ trim()	            It trims the white space from the left and right side of the 
     // Example :-
         {
             let char = String.fromCharCode(72, 69, 76, 76, 79);
-            console.log("JS String 'String.fromCharCode(72, 69, 76, 76, 79)' Method = ",char);
+            console.log("08 - JS String 'String.fromCharCode(72, 69, 76, 76, 79)' Method = ",char);
         }    
 
 // 09 - JS String 'fromCodePoint()' Method
@@ -182,7 +183,7 @@ trim()	            It trims the white space from the left and right side of the 
     // Example :- 
         {
             let result = String.fromCodePoint(9731, 9733, 9842, 0x2f804);            
-            console.log("JS String String.fromCodePoint(9731, 9733, 9842, 0x2f804) Method = ",result);
+            console.log("09 - JS String String.fromCodePoint(9731, 9733, 9842, 0x2f804) Method = ",result);
         }
 
 // 10 - JS String 'includes()' Method
@@ -198,7 +199,7 @@ trim()	            It trims the white space from the left and right side of the 
     {
         let text = "hello world, welcome to the universe.";
         let result = text.includes("world");
-        console.log("JS String 'fromCharPoint()' Method = ",result);
+        console.log("10 - JS String 'fromCharPoint()' Method = ",result);
     }
 
 // 11 - JS String 'indexOf()' Method
@@ -216,11 +217,11 @@ trim()	            It trims the white space from the left and right side of the 
             const searchTerm = 'dog';
             const indexOfFirst = paragraph.indexOf(searchTerm);
 
-            console.log(`The index of the first "${searchTerm}" is ${indexOfFirst}`);
+            console.log(`11 - The index of the first "${searchTerm}" is ${indexOfFirst}`);
             //Expected Output: "The index of the first "dog" is 15
 
             console.log(
-                `The index of the second "${searchTerm}" is ${paragraph.indexOf(
+                `11.1 - The index of the second "${searchTerm}" is ${paragraph.indexOf(
                 searchTerm,
                 indexOfFirst + 1,
                 )}`,
@@ -259,7 +260,7 @@ trim()	            It trims the white space from the left and right side of the 
               ];
               
               for (const str of strings) {
-                console.log("JS String str.isWellFormed() Method = ",str.isWellFormed());
+                console.log("12 - JS String str.isWellFormed() Method = ",str.isWellFormed());
               }
               // Logs:
                 // false
@@ -286,21 +287,129 @@ trim()	            It trims the white space from the left and right side of the 
             const paragraph = "I thinkg Ruth's dog is cuter than your dog!";
             const searchTerm = 'dog';
             console.log(
-                `Index of the last "${searchTerm}" is ${paragraph.lastIndexOf(searchTerm)}`,
+                `13 - Index of the last "${searchTerm}" is ${paragraph.lastIndexOf(searchTerm)}`,
             );
         }
 
 // 14 - JS String 'length' Method
+    // Description
+        // The length property returns the length of a string.
+        // The length property of an empty string is 0.
+
+    // Syntax
+        // string.length
+
+    // Example :- 
+        {
+            const str = "Life, the universe and everything. Answer:";
+            console.log(`14 - JS String 'length' Method $ {str} $ {str.length} = ${str} ${str.length}`);
+        }
 
 // 15 - JS String 'localCompare()' Method
+    // Description 
+        // The localeCompare() method compares two strings in the current locale.
+        // The localeCompare() method returns sort order -1, 1, or 0 (for before, after, or equal).
+        // The current locale is based on the language settings of the browser.
 
-// 16 - JS String 'match()' Method
+    // Syntax 
+        // localeCompare(compareString)
+        // localeCompare(compareString, locales)
+        // localeCompare(compareString, locales, options)
+    
+    // Example :- 
+        {
+            let text1 = "ab";
+            let text2 = "bf";
+            let result = text1.localeCompare(text2);
+            console.log("15 - JS String 'text1.localeCompare(text2)' Method = ",result);
+        }
+// 16 - JS String 'match(regexp)' Method
+    // Description
+        // The match() method matches a string against a regular expression **
+        // The match() method returns an array with the matches.
+        // The match() method returns null if no match is found.
+
+    // Syntax 
+        // string.match(a string that will be converted to a regular expression)  
+            // A regular expression object, or any object that has a Symbol.match method.
+
+    // Example :-
+        {
+            const str = "For more information, see Chapter 3.4.5.1";
+            const re = /see (chapter \d+(\.\d)*)/i;
+            const found = str.match(re);
+            console.log("16 - JS String 'str.match(re)' Method = ", found);
+            // [
+            //   'see Chapter 3.4.5.1',
+            //   'Chapter 3.4.5.1',
+            //   '.1',
+            //   index: 22,
+            //   input: 'For more information, see Chapter 3.4.5.1',
+            //   groups: undefined
+            // ]
+        }
+
+    /* The Differense Between String indexOf() and String search() */
+        // The match() method returns an array of matches.
+        // The search() method returns the position of the first match.
 
 // 17 - JS String 'matchAll()' Method
+    // Description 
+        // The matchAll() method returns an iterator
+        // The matchAll() method of String values returns an iterator of all results 
+        // matching this string against a regular expression, including capturing groups.
+
+    // Syntax 
+        // string.matchAll(a string that will be converted to a regular expression)  
+
+    // Example :- 
+        {
+            const regexp = /t(e)(st(\d?))/g; 
+            const str = 'test1test2';
+            const array = [...str.matchAll(regexp)];
+            console.log("17 - JS String '[...str.matchAll(regexp)];' Method = ", array[0]); // Expected output: Array ["test1", "e", "st1", "1"]
+            console.log("17.1 - JS String '[...str.matchAll(regexp)];' Method = ", array[1]); // Expected output: Array ["test2", "e", "st2", "2"]
+        }
 
 // 18 - JS String 'normalize()' Method
+    // Description
+        // The normalize() method of String values returns the Unicode Normalization Form of this string.
+
+    // Syntax 
+        // normalize()
+        // normalize(form) 
+            // One of "NFC", "NFD", "NFKC", or "NFKD", specifying the Unicode Normalization Form. If omitted or undefined, "NFC" is used.
+
+    // Example :- 
+        {
+            const name1 = '\u0041\u006d\u00e9\u006c\u0069\u0065';
+            const name2 = '\u0041\u006d\u0065\u0301\u006c\u0069\u0065';
+            console.log("18 - JS String 'normalize()' Method = ",`${name1}, ${name2}`); // Expected output: "Amélie, Amélie"            
+            console.log("18.1 - name1 === name2 = ",name1 === name2);  // Expected output: false        
+            console.log("18.2 - name1.length === name2.length = ", name1.length === name2.length); // Expected output: false
+
+            const name1NFC = name1.normalize('NFC');
+            const name2NFC = name2.normalize('NFC');
+            console.log("18.3 - JS String 'normalize()' Method = ",`${name1NFC}, ${name2NFC}`); // Expected output: "Amélie, Amélie"           
+            console.log("18.4 - name1NFC === name2NFC = " , name1NFC === name2NFC); // Expected output: true         
+            console.log("18.5 - name1NFC.length === name2NFC.length = ", name1NFC.length === name2NFC.length); // Expected output: true
+
+        }
 
 // 19 - JS String 'padEnd()' Method
+    // Description 
+        // The padEnd() method pads a string at the end.
+        // The padEnd() method pads a string with another string (multiple times) until it reaches a given length.
+
+    // Syntax 
+        // string.padEnd(length, string)
+
+    // Example :- 
+        {
+            let text = "Hello World ";
+            text = text.padEnd(25," hello world");
+            console.log("19 - JS String 'padEnd()' Method = ",text);
+        }    
 
 // 20 - JS String 'padStart()' Method
 
