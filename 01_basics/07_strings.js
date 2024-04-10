@@ -15,6 +15,9 @@
         -> var stringname=new String("string literal");  
         Here, new keyword is used to create instance of string. */
 
+// The backticks (`) are used to define a template literal, 
+// which allows for embedded expressions.
+
 //JavaScript String Methods
 /* Let's see the list of JavaScript string methods with examples.
 
@@ -164,7 +167,25 @@ trim()	            It trims the white space from the left and right side of the 
             console.log("JS String 'String.fromCharCode(72, 69, 76, 76, 79)' Method = ",char);
         }    
 
-// 08 - JS String 'fromCharPoint()' Method
+// 09 - JS String 'fromCodePoint()' Method
+    // Description
+        // Because fromCodePoint() is a static method of String, you always use it as String.fromCodePoint(), 
+        // rather than as a method of a String value you created. 
+        // Unicode code points range from 0 to 1114111 (0x10FFFF). 
+        // In UTF-16, each string index is a code unit with value 0 – 65535. 
+        // Higher code points are represented by a pair of 16-bit surrogate pseudo-characters. 
+        // Therefore, fromCodePoint() may return a string whose length (in UTF-16 code units) is larger than the number of arguments passed. 
+
+    // Syntax
+        // string.fromCodePoint(n1, n2, ...., nX)
+
+    // Example :- 
+        {
+            let result = String.fromCodePoint(9731, 9733, 9842, 0x2f804);            
+            console.log("JS String String.fromCodePoint(9731, 9733, 9842, 0x2f804) Method = ",result);
+        }
+
+// 10 - JS String 'includes()' Method
     // Description
         // The includes() method returns true if a string contains a specified string.
         // Otherwise it returns false.
@@ -174,75 +195,156 @@ trim()	            It trims the white space from the left and right side of the 
         // string.includes(searchvalue, start)    
 
     // Example :- 
+    {
+        let text = "hello world, welcome to the universe.";
+        let result = text.includes("world");
+        console.log("JS String 'fromCharPoint()' Method = ",result);
+    }
+
+// 11 - JS String 'indexOf()' Method
+    // Description 
+        // The indexOf() method returns the position of the first occurrence of a value in a string.
+        // The indexOf() method returns -1 if the value is not found.
+        // The indexOf() method is case sensitive.
+
+    // Syntax    
+        // string.indexOf(searchValue, Start)
+
+    // Example :-
         {
-            let text = "hello world, welcome to the universe.";
-            let result = text.includes("world");
-            console.log("JS String 'fromCharPoint()' Method = ",result);
+            const paragraph = "I think Ruth's dog is cuter than you dog!";
+            const searchTerm = 'dog';
+            const indexOfFirst = paragraph.indexOf(searchTerm);
+
+            console.log(`The index of the first "${searchTerm}" is ${indexOfFirst}`);
+            //Expected Output: "The index of the first "dog" is 15
+
+            console.log(
+                `The index of the second "${searchTerm}" is ${paragraph.indexOf(
+                searchTerm,
+                indexOfFirst + 1,
+                )}`,
+            );
+            // Expected Output: "The index of the second "dog" is 38"
+        }    
+
+    /* The Differense Between String indexOf() and String search() */
+        // The indexOf() method cannot search against a regular expression.
+        // The search() cannot take a start position argument.
+
+// 12 - JS String 'isWellFormed()' Method
+    // Description 
+        // isWellFormed() allows you to test whether a string is well-formed (i.e. does not contain any lone surrogates). 
+        // Compared to a custom implementation, isWellFormed() is more efficient, 
+        // as engines can directly access the internal representation of strings. 
+        // If you need to convert a string to a well-formed string, use the toWellFormed() method. 
+        // isWellFormed() allows you to handle ill-formed strings differently from well-formed strings, 
+        // such as throwing an error or marking it as invalid.
+
+    // Syntax
+        // isWellFormed()
+
+    // Example :- 
+        {
+            const strings = [
+                // Lone leading surrogate
+                "ab\uD800",
+                "ab\uD800c",
+                // Lone trailing surrogate
+                "\uDFFFab",
+                "c\uDFFFab",
+                // Well-formed
+                "abc",
+                "ab\uD83D\uDE04c",
+              ];
+              
+              for (const str of strings) {
+                console.log("JS String str.isWellFormed() Method = ",str.isWellFormed());
+              }
+              // Logs:
+                // false
+                // false
+                // false
+                // false
+                // true
+                // true
         }
 
-// 09 - JS String 'includes()' Method
+// 13 - JS String 'lastIndexOf()' Method
+    // Description
+        // The lastIndexOf() method returns the index (position) of the last occurrence of a specified value in a string.
+        // The lastIndexOf() method searches the string from the end to the beginning.
+        // The lastIndexOf() method returns the index from the beginning (position 0).
+        // The lastIndexOf() method returns -1 if the value is not found.
+        // The lastIndexOf() method is case sensitive.
 
-// 09 - JS String 'indexOf()' Method
+    // Syntax 
+        // string.lastIndexOf(searchValue, Start)
 
-// 10 - JS String 'isWellFormed()' Method
+    // Example :- 
+        {
+            const paragraph = "I thinkg Ruth's dog is cuter than your dog!";
+            const searchTerm = 'dog';
+            console.log(
+                `Index of the last "${searchTerm}" is ${paragraph.lastIndexOf(searchTerm)}`,
+            );
+        }
 
-// 10 - JS String 'lastIndexOf()' Method
+// 14 - JS String 'length' Method
 
-// 11 - JS String 'length' Method
+// 15 - JS String 'localCompare()' Method
 
-// 12 - JS String 'localCompare()' Method
+// 16 - JS String 'match()' Method
 
-// 13 - JS String 'match()' Method
+// 17 - JS String 'matchAll()' Method
 
-// 14 - JS String 'matchAll()' Method
+// 18 - JS String 'normalize()' Method
 
-// 15 - JS String 'normalize()' Method
+// 19 - JS String 'padEnd()' Method
 
-// 14 - JS String 'padEnd()' Method
+// 20 - JS String 'padStart()' Method
 
-// 15 - JS String 'padStart()' Method
+// 21 - JS String 'prototype' Method
 
-// 16 - JS String 'prototype' Method
+// 22 - JS String 'raw()' Method
 
-// 17 - JS String 'raw()' Method
+// 23 - JS String 'repeat()' Method
 
-// 17 - JS String 'repeat()' Method
+// 24 - JS String 'replace()' Method
 
-// 18 - JS String 'replace()' Method
+// 25 - JS String 'replaceAll()' Method
 
-// 19 - JS String 'replaceAll()' Method
+// 26 - JS String 'search()' Method
 
-// 20 - JS String 'search()' Method
+// 27 - JS String 'slice()' Method
 
-// 21 - JS String 'slice()' Method
+// 28 - JS String 'split()' Method
 
-// 22 - JS String 'split()' Method
+// 29 - JS String 'startWith()' Method
 
-// 23 - JS String 'startWith()' Method
+// 30 - JS String 'substr()' Method
 
-// 24 - JS String 'substr()' Method
+// 31 - JS String 'substring()' Method
 
-// 25 - JS String 'substring()' Method
+// 32 - JS String 'toLocalLowerCase()' Method
 
-// 26 - JS String 'toLocalLowerCase()' Method
+// 33 - JS String 'toLocalUpperCase()' Method
 
-// 27 - JS String 'toLocalUpperCase()' Method
+// 34 - JS String 'toLowerCase' Method
 
-// 28 - JS String 'toLowerCase' Method
+// 35 - JS String 'toString()' Method
 
-// 29 - JS String 'toString()' Method
+// 36 - JS String 'toUpperCase' Method
 
-// 30 - JS String 'toUpperCase' Method
+// 37 - JS String 'toWellFormed()' Method
 
-// 31 - JS String 'toWellFormed()' Method
+// 38 - JS String 'trim()' Method
 
-// 32 - JS String 'trim()' Method
+// 39 - JS String 'trimEnd()' Method
 
-// 32 - JS String 'trimEnd()' Method
+// 40 - JS String 'trimStart()' Method
 
-// 33 - JS String 'trimStart()' Method
-
-// 34 - JS String 'valueOf()' Method
+// 41 - JS String 'valueOf()' Method
 
 
 
