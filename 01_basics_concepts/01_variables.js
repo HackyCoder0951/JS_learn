@@ -96,13 +96,14 @@
 
             Because of this you can NOT:
 
-            Reassign a constant value
-            Reassign a constant array
-            Reassign a constant object
+                Reassign a constant value
+                Reassign a constant array
+                Reassign a constant object
+
             But you CAN:
 
-            Change the elements of constant array
-            Change the properties of constant object
+                Change the elements of constant array
+                Change the properties of constant object
 
 >    2 - What is Good?
             let and const have block scope.

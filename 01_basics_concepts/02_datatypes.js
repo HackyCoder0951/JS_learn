@@ -6,6 +6,11 @@
 also we are using node JS, not browser 
 there is deferent method and syntax for pop up message box in node JS
 */
+
+// A Semicolon may be omitted in most case when a line break exists.
+// Here JS interprets the line break as implicit semicolon;
+// This is called "automatic Semicolon insertion".
+
 console.log(30
     +
     35) // code readability should be high
