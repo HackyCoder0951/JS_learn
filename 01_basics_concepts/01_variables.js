@@ -175,7 +175,7 @@
 */  
  // For instance:
     
-    const pageLoadTime = /* time taken by a webpage to load */;
+    const pageLoadTime = /* time taken by a webpage to load */ //;
 
  /*   The value of pageLoadTime is not known before the page load, so it’s named normally. But it’s still a constant because it doesn’t change after the assignment.
     
@@ -236,7 +236,7 @@ console.table([accountId,accountEmail,accountPassword,accountCIty,accountState])
 
 /*
     Summary
-    
+
         We can declare variables to store data by using the var, let, or const keywords.
 
         let – is a modern variable declaration.
