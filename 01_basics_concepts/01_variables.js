@@ -175,7 +175,7 @@
 */  
  // For instance:
     
-    const pageLoadTime = /* time taken by a webpage to load */ //;
+    const pageLoadTime = " time taken by a webpage to load " ;
 
  /*   The value of pageLoadTime is not known before the page load, so it’s named normally. But it’s still a constant because it doesn’t change after the assignment.
     
@@ -201,7 +201,7 @@
     04 - Agree on terms within your team and in your mind. If a site visitor is called a “user” then we should name related variables currentUser or newUser instead of currentVisitor or newManInTown.
 */
 
-/*JS and Camel Case
+/* JS and Camel Case
 01 - Pascal Case :- We can create variable likes SmartWatch,MobileDevie,WebDriver etc. 
     It Represent the upper camel case string.
 
@@ -213,9 +213,9 @@
 */
 
 const accountId = 245005;  // constant value reference
-let accountEmail = "jignesh.vision@google.com" // variable declaration using let
-var accountPassword = "12345" // variable declaration using var that is not preferred 
-accountCIty = "Chittorgarh" // only for testing purposes
+let accountEmail = "jignesh.vision@google.com"; // variable declaration using let
+var accountPassword = "12345"; // variable declaration using var that is not preferred 
+accountCity = "Chittorgarh"; // only for testing purposes
 let accountState; // JS assumes this is an undefined value
 
 //accountId = 2 // constant value cannot be changeble  
@@ -223,7 +223,7 @@ let accountState; // JS assumes this is an undefined value
 
 accountEmail = "tech@google.com"
 accountPassword = "2121212121"
-accountCIty = "Jaipur"
+accountCity = "Jaipur"
 
 console.log(accountId);
 
@@ -232,7 +232,7 @@ Prefer not to use var
 because of issue in block scope and functional scope
 */
 
-console.table([accountId,accountEmail,accountPassword,accountCIty,accountState])
+console.table([accountId,accountEmail,accountPassword,accountCity,accountState])
 
 /*
     Summary
