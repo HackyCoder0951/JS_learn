@@ -1,6 +1,9 @@
 /*
 # 01 - Variables :- 
 
+// A variable is a "named storage" for data. We can use variables to store goodies, visitors, and other data.
+
+
 1 - var variableName = value
 
     > Can be reassigned and are only available inside the function they're created in. Its function scoped.
@@ -145,7 +148,57 @@
             Variables defined with const are also hoisted to the top, but not initialized.
 
             Meaning: Using a const variable before it is declared will result in a ReferenceError:
+        
+>    7 - Upppercase Constants
+            There is a widespread practice to use constants as aliases for difficult-to-remember values that are known before execution.
+            Such constants are named using capital letters and underscores.        
+*/
+// For instance, let’s make constants for colors in so-called “web” (hexadecimal) format:
 
+    const COLOR_RED = "#F00";
+    const COLOR_GREEN = "#0F0";
+    const COLOR_BLUE = "#00F";
+    const COLOR_ORANGE = "#FF7F00";
+
+    // ...when we need to pick a color
+    let color = COLOR_ORANGE;
+    alert(color); // #FF7F00
+
+ /* Benefits:
+
+    COLOR_ORANGE is much easier to remember than "#FF7F00".
+    It is much easier to mistype "#FF7F00" than COLOR_ORANGE.
+    When reading the code, COLOR_ORANGE is much more meaningful than #FF7F00.
+    When should we use capitals for a constant and when should we name it normally? Let’s make that clear.
+    
+    Being a “constant” just means that a variable’s value never changes. But some constants are known before execution (like a hexadecimal value for red) and some constants are calculated in run-time, during the execution, but do not change after their initial assignment.
+*/  
+ // For instance:
+    
+    const pageLoadTime = /* time taken by a webpage to load */;
+
+ /*   The value of pageLoadTime is not known before the page load, so it’s named normally. But it’s still a constant because it doesn’t change after the assignment.
+    
+    In other words, capital-named constants are only used as aliases for “hard-coded” values.
+    
+   **  Name things right
+
+    Talking about variables, there’s one more extremely important thing.
+    
+    A variable name should have a clean, obvious meaning, describing the data that it stores.
+    
+    Variable naming is one of the most important and complex skills in programming. A glance at variable names can reveal which code was written by a beginner versus an experienced developer.
+    
+    In a real project, most of the time is spent modifying and extending an existing code base rather than writing something completely separate from scratch. When we return to some code after doing something else for a while, it’s much easier to find information that is well-labelled. Or, in other words, when the variables have good names.
+    
+    Please spend time thinking about the right name for a variable before declaring it. Doing so will repay you handsomely.
+    
+    ** Some good-to-follow rules are:
+    
+    01 - Use human-readable names like userName or shoppingCart.
+    02 - Stay away from abbreviations or short names like a, b, and c, unless you know what you’re doing.
+    03 - Make names maximally descriptive and concise. Examples of bad names are data and value. Such names say nothing. It’s only okay to use them if the context of the code makes it exceptionally obvious which data or value the variable is referencing.
+    04 - Agree on terms within your team and in your mind. If a site visitor is called a “user” then we should name related variables currentUser or newUser instead of currentVisitor or newManInTown.
 */
 
 /*JS and Camel Case
@@ -180,3 +233,18 @@ because of issue in block scope and functional scope
 */
 
 console.table([accountId,accountEmail,accountPassword,accountCIty,accountState])
+
+/*
+    Summary
+    
+        We can declare variables to store data by using the var, let, or const keywords.
+
+        let – is a modern variable declaration.
+
+        var – is an old-school variable declaration. 
+        Normally we don’t use it at all, but we’ll cover subtle differences from let in the chapter The old "var", just in case you need them.
+
+        const – is like let, but the value of the variable can’t be changed.
+
+        Variables should be named in a way that allows us to easily understand what’s inside them.
+*/
