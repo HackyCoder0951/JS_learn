@@ -26,57 +26,72 @@
 
         title
             The text to show the visitor.
+
         default
             An optional second parameter, the initial value for the input field.
-The square brackets in syntax [...]
-The square brackets around default in the syntax above denote that the parameter is optional, not required.
 
-The visitor can type something in the prompt input field and press OK. Then we get that text in the result. Or they can cancel the input by pressing Cancel or hitting the Esc key, then we get null as the result.
+            The square brackets in syntax [...]
 
-The call to prompt returns the text from the input field or null if the input was canceled.
+            The square brackets around default in the syntax above denote that the parameter is optional, not required.
 
-For instance:
+        The visitor can type something in the prompt input field and press OK. 
+        Then we get that text in the result. 
+        Or they can cancel the input by pressing Cancel or hitting the Esc key, then we get null as the result.
 
-let age = prompt('How old are you?', 100);
+        The call to prompt returns the text from the input field or null if the input was canceled.
 
-alert(`You are ${age} years old!`); // You are 100 years old!
-In IE: always supply a default
-The second parameter is optional, but if we don’t supply it, Internet Explorer will insert the text "undefined" into the prompt.
+        For instance:
 
-Run this code in Internet Explorer to see:
+        let age = prompt('How old are you?', 100);
 
-let test = prompt("Test");
-So, for prompts to look good in IE, we recommend always providing the second argument:
+        alert(`You are ${age} years old!`); // You are 100 years old!
 
-let test = prompt("Test", ''); // <-- for IE
-confirm
-The syntax:
+    The syntax:
 
-result = confirm(question);
-The function confirm shows a modal window with a question and two buttons: OK and Cancel.
+        result = confirm(question);
 
-The result is true if OK is pressed and false otherwise.
+    The function confirm shows a modal window with a question and two buttons: OK and Cancel.
 
-For example:
+        The result is true if OK is pressed and false otherwise.
+
+    For example:
+
+    let isBoss = confirm("Are you the boss?");
+
+    alert( isBoss ); // true if OK is pressed
+    
+    // Summary
+
+    We covered 3 browser-specific functions to interact with visitors:
+
+    01 - alert // shows a message.
+
+    02 - prompt // shows a message asking the user to input text. It returns the text or, if Cancel button or Esc is clicked, null.
+
+    03 - confirm // shows a message and waits for the user to press “OK” or “Cancel”. It returns true for OK and false for Cancel/Esc.
+
+    All these methods are modal: they pause script execution and don’t allow the visitor to interact with the rest of the page until the window has been dismissed.
+
+    There are two limitations shared by all the methods above:
+
+    The exact location of the modal window is determined by the browser. Usually, it’s in the center.
+    The exact look of the window also depends on the browser. We can’t modify it.
+
+    That is the price for simplicity. 
+    
+    There are other ways to show nicer windows and richer interaction with the visitor, but if “bells and whistles” do not matter much, these methods work just fine.
+
+*/
+
+// For Example :- 
+
+alert("hello");
+// result = prompt(title, [default]);
+let age = prompt('How old are you?', 100); // for asking value inputs from users
+
+alert(`you are ${age} years old!`);
+// diplayed values from users input 
 
 let isBoss = confirm("Are you the boss?");
 
-alert( isBoss ); // true if OK is pressed
-Summary
-We covered 3 browser-specific functions to interact with visitors:
-
-alert
-shows a message.
-prompt
-shows a message asking the user to input text. It returns the text or, if Cancel button or Esc is clicked, null.
-confirm
-shows a message and waits for the user to press “OK” or “Cancel”. It returns true for OK and false for Cancel/Esc.
-All these methods are modal: they pause script execution and don’t allow the visitor to interact with the rest of the page until the window has been dismissed.
-
-There are two limitations shared by all the methods above:
-
-The exact location of the modal window is determined by the browser. Usually, it’s in the center.
-The exact look of the window also depends on the browser. We can’t modify it.
-That is the price for simplicity. There are other ways to show nicer windows and richer interaction with the visitor, but if “bells and whistles” do not matter much, these methods work just fine.
-
-*/
+alert(isBoss);
