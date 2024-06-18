@@ -245,11 +245,11 @@ let state;
     Some people prefer typeof(x), although the typeof x syntax is much more common.
  */
 
-    // Summary
+// Summary
     /*    
         There are 8 basic data types in JavaScript.
 
-        Seven primitive data types:
+        Primitive Data Types :
 
             01 - number for numbers of any kind: integer or floating-point, integers are limited by ±(2^53-1).
             02 - bigint for integer numbers of arbitrary length.
@@ -259,9 +259,12 @@ let state;
             06 - undefined for unassigned values – a standalone type that has a single value undefined.
             07 - symbol for unique identifiers.
         
-        And one non-primitive data type:
+        And Reference Data Types / Non-Primitive Types:
 
             08 - object for more complex data structures.
+            09 - functions
+            10 - arrays.
+            11 - RegExp - Regular Expression
         
         The typeof operator allows us to see which type is stored in a variable.
 
@@ -270,3 +273,58 @@ let state;
             * For null returns "object" – this is an error in the language, it’s not actually an object.
 
     */
+
+// note - JS is  dynamically typed language 
+    /* In dynamically typed languages all type checks are performed in a runtime, 
+    only when your program is executing. 
+    So this means you can just assign anything you want to the variable and it will work.
+    */
+
+const score = 100
+const scoreValue = 100.3
+
+const isLogIn = false
+const outsideTemp = null
+let currentUserId = "jignesh"
+let user;
+
+const id = Symbol('123')
+const anotherId = Symbol('123')
+
+console.log(id === anotherId );
+
+const bigNumber = 45646546546546546546n
+
+const heros = ["shaktiman", "naagraj", "doga"]
+let MyObj = {
+    name: "jignesh",
+    age:22,
+}
+
+const myFunction = function() {
+    console.log("hello world!");
+}
+
+console.log(typeof myFunction ); 
+
+let myYoutubename = "jigneshgoogle.com"
+
+let anothername = myYoutubename
+anothername = "jignesh"
+
+console.log(myYoutubename);
+console.log(anothername);
+
+let userOne = {
+    email: "jignesh@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "jignesh@ssci.com"
+
+console.log(userOne.email);
+
+console.log(userTwo.email);
+
