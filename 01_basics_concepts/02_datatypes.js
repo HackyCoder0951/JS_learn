@@ -113,14 +113,160 @@ let state;
 
 //04 - boolean           => true or false
     /*
-        
+        The boolean type has only two values: true and false.
+
+        This type is commonly used to store yes/no values: true means “yes, correct”, and false means “no, incorrect”.
+
+        For instance:
+
+        let nameFieldChecked = true; // yes, name field is checked
+        let ageFieldChecked = false; // no, age field is not checked
+
+        Boolean values also come as a result of comparisons:
+
+        let isGreater = 4 > 1;
+
+        alert( isGreater ); // true (the comparison result is "yes")
     */
 
 //05 - null              => nothing (Standalone value) , 
-//06 - undefined         => garbage value
-//07 - Objects & Symbol  => unique
-//08 - typeof Operator   => The typeof operator returns the type of the operand
- 
-console.log(typeof undefined); //undefined is self data type 
-console.log(typeof null); //null is a object
+    /*
+        The special null value does not belong to any of the types described above.
 
+        It forms a separate type of its own which contains only the null value:
+
+        let age = null;
+
+        In JavaScript, null is not a “reference to a non-existing object” or a “null pointer” like in some other languages.
+
+        It’s just a special value which represents “nothing”, “empty” or “value unknown”.
+
+        The code above states that age is unknown.
+    */
+
+//06 - undefined         => garbage value
+    /*
+        The special value undefined also stands apart. It makes a type of its own, just like null.
+
+        The meaning of undefined is “value is not assigned”.
+
+        If a variable is declared, but not assigned, then its value is undefined:
+
+        let age;
+
+        alert(age); // shows "undefined"
+
+        Technically, it is possible to explicitly assign undefined to a variable:
+
+        let age = 100;
+
+        // change the value to undefined
+        age = undefined;
+
+        alert(age); // "undefined"
+
+        …But we don’t recommend doing that. Normally, one uses null to assign an “empty” or “unknown” value to a variable, while undefined is reserved as a default initial value for unassigned things.
+    */
+   
+//07 - Objects & Symbol  => unique
+    /*
+        The object type is special.
+
+        All other types are called “primitive” because their values can contain only a single thing (be it a string or a number or whatever). 
+        
+        In contrast, objects are used to store collections of data and more complex entities.
+
+        Being that important, objects deserve a special treatment. 
+
+        The symbol type is used to create unique identifiers for objects. 
+        
+    */
+
+//08 - typeof Operator   => 
+    /* 
+        The typeof operator returns the type of the operand
+
+        The typeof operator returns the type of the operand. It’s useful when we want to process values of different types differently or just want to do a quick check.
+
+    */
+
+// A call to typeof x returns a string with the type name:
+
+    console.log(typeof undefined); // "undefined"
+
+    console.log(typeof 0); // "number"
+
+    console.log(typeof 10n); // "bigint"
+
+    console.log(typeof true); // "boolean"
+
+    console.log(typeof "foo"); // "string"
+
+    console.log(typeof Symbol("id") ); // "symbol"
+
+    console.log(typeof Math ); // "object"  (1)
+
+    console.log(typeof null); // "object"  (2)
+
+    console.log(typeof alert ); // "function"  (3)
+
+
+/*
+    The last three lines may need additional explanation:
+
+    Math is a built-in object that provides mathematical operations. 
+
+    The result of typeof null is "object". 
+    
+    That’s an officially recognized error in typeof, coming from very early days of JavaScript and kept for compatibility. Definitely, null is not an object. 
+    
+    It is a special value with a separate type of its own. 
+    
+    The behavior of typeof is wrong here.
+
+    The result of typeof alert is "function", because alert is a function. 
+    
+    Functions belong to the object type. But typeof treats them differently, returning "function". 
+    
+    That also comes from the early days of JavaScript. Technically, such behavior isn’t correct, but can be convenient in practice.
+
+    ** The typeof(x) syntax ** 
+
+    You may also come across another syntax: typeof(x). It’s the same as typeof x.
+
+    To put it clear: typeof is an operator, not a function. 
+    
+    The parentheses here aren’t a part of typeof. It’s the kind of parentheses used for mathematical grouping.
+
+    Usually, such parentheses contain a mathematical expression, such as (2 + 2), but here they contain only one argument (x). 
+    
+    Syntactically, they allow to avoid a space between the typeof operator and its argument, and some people like it.
+
+    Some people prefer typeof(x), although the typeof x syntax is much more common.
+ */
+
+    // Summary
+    /*    
+        There are 8 basic data types in JavaScript.
+
+        Seven primitive data types:
+
+            01 - number for numbers of any kind: integer or floating-point, integers are limited by ±(2^53-1).
+            02 - bigint for integer numbers of arbitrary length.
+            03 - string for strings. A string may have zero or more characters, there’s no separate single-character type.
+            04 - boolean for true/false.
+            05 - null for unknown values – a standalone type that has a single value null.
+            06 - undefined for unassigned values – a standalone type that has a single value undefined.
+            07 - symbol for unique identifiers.
+        
+        And one non-primitive data type:
+
+            08 - object for more complex data structures.
+        
+        The typeof operator allows us to see which type is stored in a variable.
+
+            * Usually used as typeof x, but typeof(x) is also possible.
+            * Returns a string with the name of the type, like "string".
+            * For null returns "object" – this is an error in the language, it’s not actually an object.
+
+    */
