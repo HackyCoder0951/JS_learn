@@ -1,10 +1,11 @@
-Need to Learn JavaScript -
+/* Need to Learn JavaScript -
 
 Basic Topics :-
 
     01 - Variables 
         * let, var, const, block scope
     02 - Data Types
+    //Interaction: alert, prompt, confirm
     03 - Operations
     04 - Conditionals Statements
     05 - Loops
@@ -22,3 +23,4 @@ Inter-Mid Topics
     
 
 
+*/
