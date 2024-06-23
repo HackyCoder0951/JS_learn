@@ -22,7 +22,7 @@
 
 >    1 - Block Scope
 
-            Variables declared inside a { } block cannot be accessed from outside the block:
+            Variables declared inside a { } block cannot be accessed from outside the block.
         
 >    2 - Global Scope
 
@@ -30,7 +30,7 @@
 
             Variables declared with the var keyword can NOT have block scope:
 
-            Variables declared with varinside a { } block can be accessed from outside the block:
+            Variables declared with var inside a { } block can be accessed from outside the block:
 
 >    3 - Cannot be Redeclared
 

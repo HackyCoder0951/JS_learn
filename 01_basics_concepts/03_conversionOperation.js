@@ -1,3 +1,5 @@
+// website is https://javascript.info/type-conversions
+
 let score = "jignesh";
 
 //console.log(typeof score);
