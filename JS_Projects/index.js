@@ -20,3 +20,14 @@ console.log(z); // output: 30
 
 
 // JavaScript Reserved Keywords
+    /*
+    abstract    await       boolean     break       byte            case        catch
+    char        class       const       continue    debugger        default     delete 
+    do          double      elese       enum        export          extends     false 
+    final       finally     float       for         function        goto        if 
+    implements  import      in          instanceof  int             interface   long 
+    native      new         null        package     private         public      return 
+    short       static      super       switch      synchronized    this        throw 
+    throws      transient   true        try         typeof          var         void 
+    volatile    while       with
+    */
