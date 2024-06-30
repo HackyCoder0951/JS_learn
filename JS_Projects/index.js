@@ -1,37 +1,22 @@
-var x = 10, y = 50, z = x + y;
+//  let example
+let x = 10;
+console.log(x); // Output: 10
 
-let a = 15.695, 
- b = 100,
- c = a * b ;
- 
-{
-    let a = 20;
-    b = 23;
-    c = a / b * 2 +50*2.1;
-}
+//  const example
+const y = 20;
+console.log(y); // Output: 20
 
-/*var value = 50;
-function d() {
-    alert(window.value);
-}*/
+/*  // var example
+var z = 30;
+console.log(z); // output: 30
+*/
 
-const $_i = "hello world";
-const _ii = "my first programm output is ";
-const iii = _ii + $_i;
+// variable naming rules
+    // 01 - no spaces
+    // 02 - follow camel case
+    // 03 - only letters, numbers & underscores
+    // 04 - you cannot start with numbers
+    // 05 - avoid reserved keywords
 
-MyName = "Jignesh Ameta";
-var MyName ;
 
-/*MyName = "Jignesh Ameta";
-let MyName ="Jignesh Ameta";*/
-
-//constant Array
-const pro_lang = ["soft","web","app"];
-pro_lang[0] = ".net";
-pro_lang.push("python");
-
-//Constant Objects
-const car = {type:"fiat",model:"500",color:"white"};
-car.color = "red";
-car.owner = "Jhon";
-
+// JavaScript Reserved Keywords
