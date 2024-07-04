@@ -302,7 +302,7 @@ console.log("\n01 - Addition of 10 + 20) = ",10 + 20); //Addition
 console.log("02 - Subtract of 10 - 20 = ",10 - 20); //Subtract
 console.log("03 - Multiplication of 10 - 20 = ",10 - 20); //Multiplication
 console.log("04 - Division of 10 / 20 = ",10 / 20); //Division
-console.log("05 - Modulus or Removal of 10 % 20 = ",10 % 20); //Removal
+console.log("05 - Modulus or Removal of 10 % 20 = n ",10 % 20); //Removal
 {
     let a = 10;
      a++; //Increments value by one, now a is 11
@@ -323,6 +323,7 @@ console.log("05 - Modulus or Removal of 10 % 20 = ",10 % 20); //Removal
 {
     let x = 10;
     console.log("09 - Exponentiation assignment value of var x = 10; console.log(x **= 2); is = ",x);
+    // need to recheck conceptually
 }
 
 /* 
@@ -371,7 +372,7 @@ Operator	    Description	                    Example
 >>>	            Bitwise Right Shift with Zero	(10>>>2) = 2
 
 */
-//Examples of Bitwise Operators:-
+//Examples of Bitwise Operators:-       // need to check conceptually
 console.log("\nExamples of Bitwise Operators:-"); 
 console.log("\n01 - Bitwise AND of 10 == 20 & 20 == 30 = ",10 == 20 & 20 == 30); // Bitwise AND
 console.log("02 - Bitwise OR of 10 == 20 | 20 == 30 = ",10 == 20 | 20 == 30); // Bitwise OR
@@ -391,7 +392,7 @@ Operator	    Description	    Example
 !	            Logical Not	    !(10==20) = true
 
 */
-//Examples of Logical Operators:-
+//Examples of Logical Operators:-       // need to check conceptually
 console.log("\nExamples of Logical Operators:-"); 
 console.log("\n01 - Logical AND of 10 == 20 && 20 == 30 = ",10 == 20 && 20 == 30); // Logical AND
 console.log("02 - Logical OR of 10 == 20 || 20 == 30 = ",10 == 20 || 20 == 30); // Logical OR
@@ -518,7 +519,7 @@ console.log("02 - Ternary Operator (?:) of message = (20 > 15) ? 'Yes' : 'No' = 
     console.log("07.1 - Output  of typeof Operator: 'string' = ",typeof str);   // Output: "string" 
     console.log("07.2 - Output  of typeof Operator: 'boolean' = ",typeof bool);  // Output: "boolean" 
     console.log("07.3 - Output  of typeof Operator: 'undefined' = ",typeof undef); // Output: "undefined" 
-    console.log("07.4 - Output  of typeof Operator: 'object' = ",typeof nul);   // Output: "object" (typeof null is an oddity,// it returns "object") 
+    console.log("07.4 - Output  of typeof Operator: 'null' = ",typeof nul);   // Output: "object" (typeof null is an oddity,// it returns "object") 
     console.log("07.5 - Output  of typeof Operator: 'symbol' = ",typeof sym);   // Output: "symbol" 
     console.log("07.6 - Output  of typeof Operator: 'bigint' = ",typeof bigInt);// Output: "bigint" 
 }
